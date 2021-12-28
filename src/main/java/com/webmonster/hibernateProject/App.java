@@ -1,14 +1,9 @@
 package com.webmonster.hibernateProject;
 
-import javax.sound.midi.Soundbank;
 
 import org.hibernate.cfg.Configuration;
 
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
