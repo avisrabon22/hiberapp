@@ -1,10 +1,17 @@
 package com.webmonster.hibernateProject;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
 //import####################################################
 import org.hibernate.cfg.Configuration;
 
 //main @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 public class App {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("Project started...");
 		Configuration cfg = new Configuration();
 		cfg.configure();
@@ -14,11 +21,15 @@ public class App {
 //     System.out.println(factory.isClosed());
 
 		Users user = new Users();
-		
-		user.setId(1);
-		user.setFullname("Avijit Maity");
-		user.setEmail("avisrabon22@gmail.com");
-		user.setPassword("Avijit@3834");
+		user.getId();
+		user.setFullname("Krishna Biswas");
+		user.setEmail("krishnabiswas@gmail.com");
+		user.setPassword("Kishu@3834");
+
+		FileInputStream fs = new FileInputStream("src/main/java/ChildAvi.jpg");
+		byte[] userImage = new byte[fs.available()];
+		fs.read(userImage);
+		user.setImage(userImage);
 //######################################################################
 		org.hibernate.Session session = factory.openSession();
 		org.hibernate.Transaction tx = session.beginTransaction();

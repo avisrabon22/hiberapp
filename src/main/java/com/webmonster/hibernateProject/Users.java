@@ -1,16 +1,30 @@
 package com.webmonster.hibernateProject;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Users {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(length = 30,nullable = false)
 	private String fullname;
+	
+	@Column(length = 30,nullable = false)
 	private String email;
+	
+	@Column(nullable = false,length = 30)
 	private String password;
+	
+	@Lob
+	private byte[] image;
 	
 //***************************************************************************
 public int getId() {
@@ -53,13 +67,24 @@ public int getId() {
 	}
 
 
+	public byte[] getImage() {
+		return image;
+	}
+
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+
 	//	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	public Users(int id, String fullname, String email, String password) {
+	public Users(int id, String fullname, String email, String password, byte[] image) {
 		super();
 		this.id = id;
 		this.fullname = fullname;
 		this.email = email;
 		this.password = password;
+		this.image=image;
 	}
 
 
