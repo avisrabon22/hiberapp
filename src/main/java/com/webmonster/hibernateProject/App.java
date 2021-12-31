@@ -26,10 +26,10 @@ public class App {
 		user.setEmail("krishnabiswas@gmail.com");
 		user.setPassword("Kishu@3834");
 
-		FileInputStream fs = new FileInputStream("src/main/java/ChildAvi.jpg");
-		byte[] userImage = new byte[fs.available()];
-		fs.read(userImage);
-		user.setImage(userImage);
+//		FileInputStream fs = new FileInputStream("");
+//		byte[] userImage = new byte[fs.available()];
+//		fs.read(userImage);
+//		user.setImage(userImage);
 //######################################################################
 		org.hibernate.Session session = factory.openSession();
 		org.hibernate.Transaction tx = session.beginTransaction();
