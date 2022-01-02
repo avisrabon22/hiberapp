@@ -14,6 +14,8 @@
 		<property name="show_sql">true</property>
 		<mapping class="com.webmonster.hibernateProject.Users" />
 		<mapping class="com.webmonster.hibernateProject.UsersList" />
+		<mapping class="com.webmonster.mapingTables.UsersPro" />
+		<mapping class="com.webmonster.mapingTables.Product" />
 	</session-factory>
 
 
