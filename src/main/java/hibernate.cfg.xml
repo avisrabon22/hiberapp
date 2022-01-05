@@ -16,6 +16,9 @@
 		<mapping class="com.webmonster.hibernateProject.UsersList" />
 		<mapping class="com.webmonster.mapingTables.UsersPro" />
 		<mapping class="com.webmonster.mapingTables.Product" />
+		<mapping class="com.webmonster.mapmanytomany.EmpDetails" />
+		<mapping class="com.webmonster.mapmanytomany.ProjectDetails" />
+
 	</session-factory>
 
 

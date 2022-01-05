@@ -3,6 +3,9 @@ package com.webmonster.mapingTables;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Product {
@@ -10,6 +13,9 @@ public class Product {
 	@Column(name="product_id")
 	private int productId;
 	private String productName;
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private UsersPro users;
 //	******************************************************************
 
 	public int getProductId() {
@@ -33,10 +39,24 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int productId, String productName) {
+	public UsersPro getUsers() {
+		return users;
+	}
+
+	public void setUsers(UsersPro users) {
+		this.users = users;
+	}
+
+	public Product(int productId, String productName, UsersPro users) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
+		this.users = users;
 	}
+
+	
+	
+	
+	
 
 }

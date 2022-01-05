@@ -1,10 +1,11 @@
 package com.webmonster.mapingTables;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class UsersPro {
@@ -12,9 +13,9 @@ public class UsersPro {
 	@Column(name = "user_Id")
 	private int userID;
 	private String username;
-	@OneToOne
-	@JoinColumn(name = "prod_id")
-	private Product prod;
+
+	@OneToMany(mappedBy = "users")
+	private List<Product> prods;
 
 //	#####################################################
 	public int getUserID() {
@@ -33,14 +34,12 @@ public class UsersPro {
 		this.username = username;
 	}
 
-	
-	
-	public Product getProd() {
-		return prod;
+	public List<Product> getProds() {
+		return prods;
 	}
 
-	public void setProd(Product prod) {
-		this.prod = prod;
+	public void setProds(List<Product> prods) {
+		this.prods = prods;
 	}
 
 	public UsersPro() {
@@ -48,10 +47,11 @@ public class UsersPro {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UsersPro(int userID, String username) {
+	public UsersPro(int userID, String username, List<Product> prods) {
 		super();
 		this.userID = userID;
 		this.username = username;
+		this.prods = prods;
 	}
 
 }
