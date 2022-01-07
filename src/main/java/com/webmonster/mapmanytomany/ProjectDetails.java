@@ -3,6 +3,7 @@ package com.webmonster.mapmanytomany;
 import java.util.List;
 
 import javax.persistence.Entity;
+//import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -12,7 +13,7 @@ public class ProjectDetails {
 	private int ProId;
 	private String ProName;
 
-	@ManyToMany(mappedBy = "projects")
+	@ManyToMany(mappedBy = "projects"  )
 	private List<EmpDetails> employees;
 
 //	*******************************************************************
