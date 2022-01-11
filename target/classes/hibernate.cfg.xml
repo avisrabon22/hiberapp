@@ -5,6 +5,7 @@
 
 <hibernate-configuration>
 	<session-factory>
+		<!--Property section************************ -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:8000/hibernate</property>
 		<property name="connection.username">avijit</property>
@@ -13,14 +14,17 @@
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
 
+		<!--Mapping section************************************** -->
 		<mapping class="com.webmonster.hibernateProject.Users" />
 		<mapping class="com.webmonster.hibernateProject.UsersList" />
 		<mapping class="com.webmonster.mapingTables.UsersPro" />
 		<mapping class="com.webmonster.mapingTables.Product" />
 		<mapping class="com.webmonster.mapmanytomany.EmpDetails" />
 		<mapping class="com.webmonster.mapmanytomany.ProjectDetails" />
-
+		<mapping resource="com/webmonster/xml/EmpWithXML.hbm.xml"/>
 	</session-factory>
 
 

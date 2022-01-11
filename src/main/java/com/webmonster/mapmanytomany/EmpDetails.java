@@ -1,15 +1,19 @@
 package com.webmonster.mapmanytomany;
-
+//Import**********************************
 import java.util.List;
-
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 //import javax.persistence.FetchType;
 //import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-
+//Class##################################################
 @Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class EmpDetails {
 	@Id
 	private int empID; 

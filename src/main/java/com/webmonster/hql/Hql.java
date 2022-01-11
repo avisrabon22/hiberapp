@@ -23,6 +23,7 @@ public class Hql {
 
 		org.hibernate.Session session = factory.openSession();
 
+		
 		String hql = "from EmpDetails where empID=:myempID";
 		@SuppressWarnings("rawtypes")
 		org.hibernate.query.Query Q = session.createQuery(hql);
@@ -36,6 +37,8 @@ public class Hql {
 			System.out.println(employees.getEmpID() + ":" + employees.getEmpName());
 		}
 
+		
+		
 		session.close();
 		factory.close();
 	}
